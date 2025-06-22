@@ -97,12 +97,68 @@
 
         <!--==================== PRODUCTS ====================-->
         <section class="products">
+            <div class="product__bg section">
+                <div class="product__container container grid">
+                    <div class="product__data">
+                        <a href="#about" class="product__button">
+                            Scroll Down <i class="ri-arrow-down-s-line"></i>
+                        </a>
 
+                        <p class="product__description">
+                            We strive to form deep partnerships with farmers
+                            from all over the world to create perspective
+                            together and form healthy working relationships
+                            built on trust and respect.
+                        </p>
+                    </div>
+
+                    <div class="product__content">
+                        <article class="product__card">
+                            <img src="{{ asset('assets/images/product-coffee-1.png') }}" alt="Classic Coffee"
+                                class="product__img">
+                            <h3 class="product__name">Classic Coffee</h3>
+                            <span class="product__price">$17.90</span>
+                        </article>
+
+                        <article class="product__card">
+                            <img src="{{ asset('assets/images/product-coffee-2.png') }}" alt="Black coffee"
+                                class="product__img">
+                            <h3 class="product__name">Black coffee</h3>
+                            <span class="product__price">$24.90</span>
+                        </article>
+
+                        <article class="product__card">
+                            <img src="{{ asset('assets/images/product-coffee-3.png') }}" alt="Strong coffee"
+                                class="product__img">
+                            <h3 class="product__name">Strong coffee</h3>
+                            <span class="product__price">$32.90</span>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!--==================== ABOUT ====================-->
         <section class="about" id="about">
+            <div class="about__bg section">
+                <div class="about__container container grid">
+                    <div class="about__data">
+                        <h2 class="section__title">
+                            Our History
+                        </h2>
 
+                        <p class="about__description">
+                            We make and grow the best coffee in Peru, accompanying
+                            families since 1930, with professional workers who
+                            harvest, collect and select the coffee with quality
+                            work, thus providing exquisite coffee to enjoy together
+                            as a family.
+                        </p>
+                    </div>
+
+                    <img src="{{ asset('assets/images/about-coffee.png') }}" alt="about coffee" class="about__img">
+                </div>
+            </div>
         </section>
 
         <!--==================== STEPS ====================-->

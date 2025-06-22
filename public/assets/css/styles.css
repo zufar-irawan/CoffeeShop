@@ -130,7 +130,7 @@ img {
 }
 
 .header__border {
-    width: 100px;
+    width: 100%;
     height: 2px;
     background-image: linear-gradient(
         90deg,
@@ -223,7 +223,15 @@ img {
 .nav__link:hover {
     color: var(--second-color);
 }
+
 /* Change background header */
+.scroll-header {
+    box-shadow: 0 2px 8px hsla(12, 32%, 12%, 0.5);
+}
+
+.scroll-header .header__border {
+    opacity: 0;
+}
 
 /* Active link */
 
@@ -328,8 +336,130 @@ img {
 }
 
 /*=============== PRODUCTS ===============*/
+.products {
+    background-color: var(--first-color-alt);
+}
+
+.product__bg {
+    background-color: var(--first-color);
+    border-radius: var(--border-section);
+    -webkit-border-radius: var(--border-section);
+    -moz-border-radius: var(--border-section);
+    -ms-border-radius: var(--border-section);
+    -o-border-radius: var(--border-section);
+}
+
+.product__container {
+    row-gap: 3.5rem;
+}
+
+.product__button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    background-color: var(--first-color-alt);
+    padding: 1rem 1.5rem;
+    border-radius: 4rem;
+    color: var(--white-color);
+    font-weight: var(--font-medium);
+    box-shadow: 0 8px 24px hsla(12, 32%, 8%, 0.5);
+    margin-bottom: 2rem;
+    transition: box-shadow 0.3s, transform 0.3s;
+    -webkit-border-radius: 4rem;
+    -moz-border-radius: 4rem;
+    -ms-border-radius: 4rem;
+    -o-border-radius: 4rem;
+    -webkit-transition: box-shadow 0.3s, transform 0.3s;
+    -moz-transition: box-shadow 0.3s, transform 0.3s;
+    -ms-transition: box-shadow 0.3s, transform 0.3s;
+    -o-transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product__button i {
+    font-size: 1.5rem;
+}
+
+.product__button:hover {
+    box-shadow: 0 8px 32px hsla(12, 32%, 8%, 0.6);
+    transform: translateY(0.35rem);
+    -webkit-transform: translateY(0.35rem);
+    -moz-transform: translateY(0.35rem);
+    -ms-transform: translateY(0.35rem);
+    -o-transform: translateY(0.35rem);
+}
+
+.product__data,
+.product__card {
+    text-align: center;
+    color: var(--white-color);
+}
+
+.product__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 3.5rem 4.5rem;
+}
+
+.product__img {
+    width: 120px;
+    filter: drop-shadow(0 4px 16px hsl(12, 32%, 16%));
+    -webkit-filter: drop-shadow(0 4px 16px hsl(12, 32%, 16%));
+    margin-bottom: 1.5rem;
+    transition: transform 0.4s;
+    -webkit-transition: transform 0.4s;
+    -moz-transition: transform 0.4s;
+    -ms-transition: transform 0.4s;
+    -o-transition: transform 0.4s;
+}
+
+.product__img:hover {
+    transform: translateY(-0.35rem);
+    -webkit-transform: translateY(-0.35rem);
+    -moz-transform: translateY(-0.35rem);
+    -ms-transform: translateY(-0.35rem);
+    -o-transform: translateY(-0.35rem);
+}
+
+.product__name,
+.product__price {
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
+    font-weight: var(--font-regular);
+    line-height: 120%;
+}
 
 /*=============== ABOUT ===============*/
+.about {
+    background-color: var(--first-color);
+}
+
+.about__bg {
+    background-color: var(--white-color);
+    border-radius: var(--border-section);
+    -webkit-border-radius: var(--border-section);
+    -moz-border-radius: var(--border-section);
+    -ms-border-radius: var(--border-section);
+    -o-border-radius: var(--border-section);
+}
+
+.about__container {
+    row-gap: 3rem;
+}
+
+.about__data {
+    text-align: center;
+}
+
+.about__img {
+    width: 320px;
+    border-radius: 1rem;
+    justify-self: center;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
 
 /*=============== STEPS ===============*/
 
