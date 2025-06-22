@@ -21,13 +21,78 @@
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <div class="header__border"></div>
+
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
+                CoffeeShop
+            </a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">
+                            <i class="ri-home-5-fill"></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class="ri-award-fill"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#steps" class="nav__link">
+                            <i class="ri-compass-3-fill"></i>
+                            <span>Steps</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#testimonial" class="nav__link">
+                            <i class="ri-message-3-fill"></i>
+                            <span>Testimonial</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
     <!--==================== MAIN ====================-->
     <main class="main">
         <!--==================== HOME ====================-->
         <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h3 class="home__subtitle">
+                        EXCEPTIONAL QUALITY
+                    </h3>
 
+                    <h1 class="home__title">
+                        It's time for a <br>
+                        good coffee
+
+                        <img src="{{ asset('assets/images/home-coffee-title.png') }}" alt="home image">
+                    </h1>
+
+                    <p class="home__description">
+                        Each select coffee bean reflects our comitment
+                        to Peruvian coffee growers, who bring the best
+                        select coffee to your table.
+                    </p>
+
+                    <a href="" class="button">
+                        Get Started <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                </div>
+
+                <img src="{{ asset('assets/images/home-coffee.png') }}" alt="home image" class="home__img">
+            </div>
         </section>
 
         <!--==================== PRODUCTS ====================-->
