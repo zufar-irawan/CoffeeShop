@@ -504,7 +504,7 @@ img {
     height: 150px;
     background-color: var(--first-color-light);
     border-radius: 50%;
-    box-shadow: 0 8px 32px hsla(12, 32%, 8%, hsla(12, 32%, 12%, 0.3));
+    box-shadow: 0 8px 32px hsla(12, 32%, 8%, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -538,7 +538,7 @@ img {
 .steps__subcircle {
     width: 50px;
     height: 50px;
-    border-color: var(--second-color);
+    background-color: var(--second-color);
     position: absolute;
     top: -0.75rem;
     left: 0;
