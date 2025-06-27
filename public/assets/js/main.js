@@ -38,4 +38,17 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true
+})
+
+sr.reveal(`.home__data, .product__data, .steps__content, .footer__container`)
+sr.reveal(`.home__img, .store__container .section__title, .store__search`, { origin: 'bottom' })
+sr.reveal(`.product__card, .products__card`, { interval: 100 })
+sr.reveal(`.about__img, .testimonial__img`, { origin: 'right' })
+sr.reveal(`.about__data, .testimonial__data, .filter`, { origin: 'left' })
 

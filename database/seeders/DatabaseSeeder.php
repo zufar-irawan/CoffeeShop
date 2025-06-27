@@ -21,3 +21,9 @@ class DatabaseSeeder extends Seeder
         ]);
     }
 }
+
+$this->call(CfProductSeeder::class);
+
+$this->call(UserSeeder::class);
+
+$this->call(OrderSeeder::class);

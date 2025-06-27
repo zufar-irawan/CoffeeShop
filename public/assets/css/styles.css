@@ -86,17 +86,17 @@ img {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
+.container__ {
     max-width: 1120px;
     margin-inline: 1.5rem;
 }
 
-.grid {
+.grid__ {
     display: grid;
     gap: 1.5rem;
 }
 
-.section {
+.section__ {
     padding-block: 4.5rem 3.5rem;
 }
 
@@ -110,12 +110,12 @@ img {
     margin-bottom: 1.5rem;
 }
 
-.main {
+.main__ {
     overflow: hidden; /* For animation ScrollReveal */
 }
 
 /*=============== HEADER & NAV ===============*/
-.header {
+.header__ {
     position: fixed;
     top: 0;
     left: 0;
@@ -148,7 +148,7 @@ img {
     -o-transition: opacity 0.3s;
 }
 
-.nav {
+.nav__ {
     height: var(--header-height);
     display: flex;
     justify-content: center;
@@ -296,7 +296,7 @@ img {
 }
 
 /*=============== BUTTON ===============*/
-.button {
+.button__ {
     display: inline-flex;
     align-items: center;
     column-gap: 0.5rem;
@@ -317,7 +317,7 @@ img {
     -o-transition: box-shadow 0.3s;
 }
 
-.button i {
+.button__ i {
     font-size: 1.5rem;
     transition: transform 0.3s;
     -webkit-transition: transform 0.3s;
@@ -326,11 +326,11 @@ img {
     -o-transition: transform 0.3s;
 }
 
-.button:hover {
+.button__:hover {
     box-shadow: 0 8px 48px hsla(39, 62%, 65%, 0.3);
 }
 
-.button:hover i {
+.button__:hover i {
     transform: translateX(0.25rem);
     -webkit-transform: translateX(0.25rem);
     -moz-transform: translateX(0.25rem);
@@ -620,8 +620,17 @@ img {
     -o-border-radius: 1rem;
 }
 
+/*=============== SHOP ===============*/
+.shop__searchbar {
+    margin-bottom: 1rem;
+}
+
+.searchbar__container {
+    position: relative;
+}
+
 /*=============== FOOTER ===============*/
-.footer {
+.footer__ {
     background-color: var(--white-color);
     position: relative;
 }
@@ -819,7 +828,7 @@ img {
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
 @media screen and (max-width: 300px) {
-    .container {
+    .container__ {
         margin-inline: 1rem;
     }
 
@@ -879,12 +888,12 @@ img {
 
 /* For large devices */
 @media screen and (min-width: 1023px) {
-    .section {
+    .section__ {
         padding-block: 7.5rem 5.5rem;
         --border-section: 104px 104px 0 0;
     }
 
-    .nav {
+    .nav__ {
         height: calc(var(--header-height) + 2rem);
         justify-content: space-between;
     }
@@ -1016,5 +1025,119 @@ img {
         -moz-transform: rotate(85deg);
         -ms-transform: rotate(85deg);
         -o-transform: rotate(85deg);
+    }
+
+    .steps__bg-img {
+        top: 0;
+        height: 100%;
+        object-position: initial;
+    }
+
+    .testimonial__container {
+        grid-template-columns: 510px max-content;
+        align-items: center;
+    }
+
+    .testimonial__img {
+        width: 450px;
+    }
+
+    .testimonial__data,
+    .testimonial__data .section__title {
+        text-align: initial;
+    }
+
+    .testimonial__data .section__title {
+        margin-bottom: 3rem;
+    }
+
+    .footer__container {
+        grid-template-columns: initial;
+        justify-content: initial;
+        row-gap: 6rem;
+        padding-block: 6rem 3rem;
+    }
+
+    .footer__data {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        text-align: initial;
+    }
+
+    .footer__logo {
+        margin-bottom: 1.5rem;
+    }
+
+    .footer__logo img {
+        width: 32px;
+    }
+
+    .footer__title {
+        font-size: var(--h1-font-size);
+    }
+
+    .footer__form {
+        width: 360px;
+        row-gap: 1.5rem;
+    }
+
+    .footer__content {
+        row-gap: 4rem;
+    }
+
+    .footer__social {
+        column-gap: 3rem;
+    }
+
+    .footer__social-link {
+        font-size: 1.5rem;
+    }
+
+    .footer__bg-img {
+        object-position: top;
+    }
+
+    .scrollup {
+        right: 3rem;
+    }
+
+    .show-scroll {
+        bottom: 3rem;
+    }
+}
+
+@media screen and (min-width: 1152px) {
+    .container__ {
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width: 1248px) {
+    .home__container {
+        column-gap: 4.5rem;
+    }
+
+    .home__img {
+        width: 550px;
+    }
+
+    .product__container {
+        column-gap: 9rem;
+    }
+
+    .about__container {
+        column-gap: 6.5rem;
+    }
+
+    .about__img {
+        width: 550px;
+    }
+
+    .testimonial__container {
+        column-gap: 2rem;
+    }
+
+    .testimonial__img {
+        width: 550px;
     }
 }
