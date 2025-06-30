@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('cfordersdetail', function (Blueprint $table) {
             $table->id('ID');
-            $table->unsignedBigInteger('OrderID');
-            $table->foreign('OrderID')->references('ID')->on('cforders')->onDelete('cascade');
-            $table->unsignedBigInteger('ProductID');
-            $table->foreign('ProductID')->references('ID')->on('cfproduct')->onDelete('cascade');
+            $table->integer('OrderID');
+            $table->integer('ProductID');
             $table->string('Quantity');
             $table->string('Subtotal');
             $table->timestamps();

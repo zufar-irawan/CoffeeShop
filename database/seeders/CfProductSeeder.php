@@ -12,7 +12,7 @@ class CfProductSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('cfproduct')->insert([
+        DB::table('cfproducts')->insert([
             // Hot Drinks (Minuman Panas)
             [
                 'ProductName' => 'Espresso',

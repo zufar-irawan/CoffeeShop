@@ -10,7 +10,7 @@ class OrderSeeder extends Seeder
     public function run(): void
     {
         $customers = DB::table('users')->where('role', 'c')->get();
-        $products = DB::table('cfproduct')->get();
+        $products = DB::table('cfproducts')->get();
         $cities = ['Jakarta', 'Bandung', 'Surabaya', 'Yogyakarta', 'Medan', 'Denpasar'];
 
         foreach ($customers as $customer) {

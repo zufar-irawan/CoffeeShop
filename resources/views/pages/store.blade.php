@@ -180,7 +180,6 @@
         .products__image {
             width: 150px;
             height: 120px;
-            background: linear-gradient(135deg, var(--second-color), var(--first-color-light));
             border-radius: 0.75rem;
             display: flex;
             align-items: center;
@@ -188,6 +187,14 @@
             font-size: var(--h1-font-size);
             color: var(--white-color);
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .products__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.75rem;
         }
 
         .products__content {
@@ -269,6 +276,12 @@
                 height: 100px;
             }
 
+            .products__image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover
+            }
+
             .products__actions {
                 grid-column: 1 / -1;
                 align-items: stretch;
@@ -294,6 +307,12 @@
                 width: 100%;
                 height: 120px;
                 margin: 0 auto;
+            }
+
+            .products__image img {
+                width: 100px;
+                height: 100%;
+                object-fit: cover;
             }
 
             .products__actions {
@@ -327,12 +346,12 @@
                         <div class="filter__price">
                             <h4 class="filter__price-title">Price Range</h4>
                             <div class="price__range">
-                                <input type="range" class="price__slider" min="20000" max="1000000" value="500000"
-                                    step="5000" id="priceRange">
+                                <input type="range" class="price__slider" min="1000" max="100000" value="50000"
+                                    step="1000" id="priceRange">
                                 <div class="price__values">
-                                    <span>Rp 20K</span>
-                                    <span id="currentPrice">Rp 500K</span>
-                                    <span>Rp 1M</span>
+                                    <span>Rp 1K</span>
+                                    <span id="currentPrice">Rp 50K</span>
+                                    <span>Rp 100k</span>
                                 </div>
                             </div>
                         </div>
@@ -342,20 +361,24 @@
                             <h4 class="filter__category-title">Categories</h4>
                             <div class="category__list">
                                 <label class="category__item">
-                                    <input type="checkbox" class="category__checkbox" value="coffee-beans">
-                                    <span>Coffee Beans</span>
+                                    <input type="checkbox" class="category__checkbox" value="1">
+                                    <span>Hot Drinks</span>
                                 </label>
                                 <label class="category__item">
-                                    <input type="checkbox" class="category__checkbox" value="ground-coffee">
-                                    <span>Ground Coffee</span>
+                                    <input type="checkbox" class="category__checkbox" value="2">
+                                    <span>Cold Drinks</span>
                                 </label>
                                 <label class="category__item">
-                                    <input type="checkbox" class="category__checkbox" value="equipment">
-                                    <span>Equipment</span>
+                                    <input type="checkbox" class="category__checkbox" value="3">
+                                    <span>Juices</span>
                                 </label>
                                 <label class="category__item">
-                                    <input type="checkbox" class="category__checkbox" value="accessories">
-                                    <span>Accessories</span>
+                                    <input type="checkbox" class="category__checkbox" value="4">
+                                    <span>Food</span>
+                                </label>
+                                <label class="category__item">
+                                    <input type="checkbox" class="category__checkbox" value="5">
+                                    <span>Dessert</span>
                                 </label>
                             </div>
                         </div>
@@ -364,21 +387,26 @@
                     <!-- Products Section -->
                     <div class="products__shop">
                         <div class="products__grid" id="productsGrid">
+                            @foreach ($products as $product)
+                                <div class="products__card" data-category="{{ $product->Category }}"
+                                    data-price="{{ $product->Price }}">
+                                    <div class="products__image">
+                                        <img src="{{ asset('assets/images/product/' . ($product->Image1 ?: 'placeholder.png')) }}"
+                                            alt="{{ $product->ProductName }}">
+                                    </div>
+                                    <div class="products__content">
+                                        <h3 class="products__title">{{ $product->ProductName }}</h3>
+                                        <p class="products__description">{{ $product->Description }}</p>
+                                    </div>
+                                    <div class="products__actions">
+                                        <div class="products__price">
+                                            {{ 'RP.' . number_format($product->Price, 0, ',', '.') }}</div>
+                                        <button class="products__button">Add to Order</button>
+                                    </div>
+                                </div>
+                            @endforeach
                             <!-- Product 1 -->
-                            <div class="products__card" data-category="coffee-beans" data-price="389000">
-                                <div class="products__image">☕</div>
-                                <div class="products__content">
-                                    <h3 class="products__title">Ethiopian Arabica Beans</h3>
-                                    <p class="products__description">Premium single-origin coffee beans with floral
-                                        notes
-                                        and bright acidity. Perfect for pour-over brewing methods.</p>
-                                </div>
-                                <div class="products__actions">
-                                    <div class="products__price">Rp 389.000</div>
-                                    <button class="products__button"
-                                        onclick="addToOrder('Ethiopian Arabica Beans', 25.99)">Add to Order</button>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -437,7 +465,7 @@
                 const title = card.querySelector('.products__title').textContent.toLowerCase();
                 const description = card.querySelector('.products__description').textContent.toLowerCase();
                 const price = parseInt(card.dataset.price);
-                const category = card.dataset.category;
+                const category = card.dataset.category.toString();
 
                 const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
                 const matchesPrice = price <= maxPrice;

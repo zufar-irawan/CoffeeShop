@@ -47,8 +47,8 @@ const sr = ScrollReveal({
 })
 
 sr.reveal(`.home__data, .product__data, .steps__content, .footer__container`)
-sr.reveal(`.home__img, .store__container .section__title, .store__search`, { origin: 'bottom' })
-sr.reveal(`.product__card, .products__card`, { interval: 100 })
+sr.reveal(`.home__img, .store__container .section__title`, { origin: 'bottom' })
+sr.reveal(`.product__card`, { interval: 100 })
 sr.reveal(`.about__img, .testimonial__img`, { origin: 'right' })
-sr.reveal(`.about__data, .testimonial__data, .filter`, { origin: 'left' })
+sr.reveal(`.about__data, .testimonial__data`, { origin: 'left' })
 

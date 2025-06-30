@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Cfproducts;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -7,5 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/shop', function () {
-    return view('pages/store');
+    $product = Cfproducts::get();
+
+    return view('pages/store', ['products' => $product]);
 });
